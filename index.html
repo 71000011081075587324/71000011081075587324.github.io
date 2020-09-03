@@ -172,14 +172,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##零基础运用hexo框架搭建个人博客</p>
-<p>###一.前提准备（以下所有演示均已widows系统为例，mac用户可观看文末视频链接配合文档进行搭建）</p>
-<p>###1.Git下载安装与环境配置<br>●网上教程众多，此处就不累述。给出其中一个参考链接<a target="_blank" rel="noopener" href="https://blog.csdn.net/huangqqdy/article/details/83032408">Git下载、安装与环境配置</a></p>
-<p>###2.Node.js下载安装与配置</p>
-<p>●<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js下载链接</a>下载左边LTS长期支持版。安装完成后打开cmd（同时按住Win+R，输入cmd，打开命令提示符程序），输入node -v和npm -v**(此处注意-v前面有空格，后面所有命令一样，均需注意空格，不输入空格则会造成错误)**查看是否安装成功，成功则会类似下图所示。<br>●下载npm的镜像源cnpm：在cmd中输入npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm/taobao.org%E8%BF%9B%E8%A1%8C%E4%B8%8B%E8%BD%BD%E3%80%82">https://registry.npm/taobao.org进行下载。</a>   下载完成后，在cmd中输入cnpm和cnpm -v查看是否安装成功。</p>
-<p>##二：个人博客搭建</p>
-<p>###1.hexo下载使用<br>●在cmd中输入cnpm install -g hexo-cli,下载完成后输入hexo -v查看是否安装成功。<br>●新建一个文件夹blog,在该文件夹中，右键点击Git Bush Here(后续称为黑框)(或者在任意地方打开黑框然后输入cd 文件夹的位置(eg:cd E:\myblog)),然后输入hexo init，等待安装完成后可输入ls -l查看是否安装成功。<br>●再输入hexo s，会出现网址，将网址输入浏览器中即可查看已创建的本地博客网页(有时可能出现网址无法访问的现象，是由于hexo默认的端口4000被占用了，在黑框中输入hexo s -p 5000即可访问。如若还是无法访问也影响不大，对后续将网页部署到远端后进行访问没有影响)。   </p>
-<p>###2.将个人博客网页部署到远端Github/Gitee(下文演示以Github为例，Gitee操作类似)<br>●登录Github网页，新建一个仓库(即点击右上角的加号后，再点击New repository)，在Repository name中需填写格式’自己的GitHub名字.github.io’，必须按该格式填写，其余地方随意。<br>●在文件夹blog中打开黑框后输入cnpm install –save hexo-deployer-git<br>●打开文件夹blog中的_config.yml,找到如下图处并按图进行修改，马赛克处填入自己的Github账号(注意每个冒号后都要加空格)。<br>●再在黑框中输入hexo d，可能会出现如下图所示，即在上面输入自己Github账号下面输入密码，之后即成功，再刷新打开网页中的仓库即可看到成功，此时个人博客网址即使：https：//自己Github用户名.github.io,至此个人博客即是搭建成功。   </p>
+        <a id="more"></a>
+
+<h2 id="零基础运用hexo框架搭建个人博客"><a href="#零基础运用hexo框架搭建个人博客" class="headerlink" title="零基础运用hexo框架搭建个人博客"></a>零基础运用hexo框架搭建个人博客</h2><h3 id="一-前提准备（以下所有演示均已widows系统为例，mac用户可观看文末视频链接配合文档进行搭建）"><a href="#一-前提准备（以下所有演示均已widows系统为例，mac用户可观看文末视频链接配合文档进行搭建）" class="headerlink" title="一.前提准备（以下所有演示均已widows系统为例，mac用户可观看文末视频链接配合文档进行搭建）"></a>一.前提准备（以下所有演示均已widows系统为例，mac用户可观看文末视频链接配合文档进行搭建）</h3><h3 id="1-Git下载安装与环境配置"><a href="#1-Git下载安装与环境配置" class="headerlink" title="1.Git下载安装与环境配置"></a>1.Git下载安装与环境配置</h3><p>●网上教程众多，此处就不累述。给出其中一个参考链接<a target="_blank" rel="noopener" href="https://blog.csdn.net/huangqqdy/article/details/83032408">Git下载、安装与环境配置</a></p>
+<h3 id="2-Node-js下载安装与配置"><a href="#2-Node-js下载安装与配置" class="headerlink" title="2.Node.js下载安装与配置"></a>2.Node.js下载安装与配置</h3><p>●<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js下载链接</a>下载左边LTS长期支持版。安装完成后打开cmd（同时按住Win+R，输入cmd，打开命令提示符程序），输入node -v和npm -v**(此处注意-v前面有空格，后面所有命令一样，均需注意空格，不输入空格则会造成错误)**查看是否安装成功，成功则会类似下图所示。<br>●下载npm的镜像源cnpm：在cmd中输入npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm/taobao.org%E8%BF%9B%E8%A1%8C%E4%B8%8B%E8%BD%BD%E3%80%82">https://registry.npm/taobao.org进行下载。</a>   下载完成后，在cmd中输入cnpm和cnpm -v查看是否安装成功。</p>
+<h2 id="二：个人博客搭建"><a href="#二：个人博客搭建" class="headerlink" title="二：个人博客搭建"></a>二：个人博客搭建</h2><h3 id="1-hexo下载使用"><a href="#1-hexo下载使用" class="headerlink" title="1.hexo下载使用"></a>1.hexo下载使用</h3><p>●在cmd中输入cnpm install -g hexo-cli,下载完成后输入hexo -v查看是否安装成功。<br>●新建一个文件夹blog,在该文件夹中，右键点击Git Bush Here(后续称为黑框)(或者在任意地方打开黑框然后输入cd 文件夹的位置(eg:cd E:\myblog)),然后输入hexo init，等待安装完成后可输入ls -l查看是否安装成功。<br>●再输入hexo s，会出现网址，将网址输入浏览器中即可查看已创建的本地博客网页(有时可能出现网址无法访问的现象，是由于hexo默认的端口4000被占用了，在黑框中输入hexo s -p 5000即可访问。如若还是无法访问也影响不大，对后续将网页部署到远端后进行访问没有影响)。   </p>
+<h3 id="2-将个人博客网页部署到远端Github-Gitee-下文演示以Github为例，Gitee操作类似"><a href="#2-将个人博客网页部署到远端Github-Gitee-下文演示以Github为例，Gitee操作类似" class="headerlink" title="2.将个人博客网页部署到远端Github/Gitee(下文演示以Github为例，Gitee操作类似)"></a>2.将个人博客网页部署到远端Github/Gitee(下文演示以Github为例，Gitee操作类似)</h3><p>●登录Github网页，新建一个仓库(即点击右上角的加号后，再点击New repository)，在Repository name中需填写格式’自己的GitHub名字.github.io’，必须按该格式填写，其余地方随意。<br>●在文件夹blog中打开黑框后输入cnpm install –save hexo-deployer-git<br>●打开文件夹blog中的_config.yml,找到如下图处并按图进行修改，马赛克处填入自己的Github账号(注意每个冒号后都要加空格)。<br>●再在黑框中输入hexo d，可能会出现如下图所示，即在上面输入自己Github账号下面输入密码，之后即成功，再刷新打开网页中的仓库即可看到成功，此时个人博客网址即使：https：//自己Github用户名.github.io,至此个人博客即是搭建成功。   </p>
 
       
 
@@ -243,19 +241,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+        
+          <a class="article-more-a" href="/2020/09/02/hello-world/#more">more >></a>
+        
       
 
       
