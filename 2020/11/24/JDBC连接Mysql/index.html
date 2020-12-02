@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2020/9 | Hexo</title>
+  <title>JDBC连接Mysql | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2020/09/index.html">
+  <meta name="description" content="一：JDBC连接在IJ中使用maven构建一个项目，在pom.xml中加入依赖： 12345678&lt;dependencies&gt;    &lt;dependency&gt;        &lt;groupId&gt;mysql&lt;&#x2F;groupId&gt;        &lt;artifactId&gt;mysql-connector-java&lt;&#x2F;artifactId&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDBC连接Mysql">
+<meta property="og:url" content="http://example.com/2020/11/24/JDBC%E8%BF%9E%E6%8E%A5Mysql/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一：JDBC连接在IJ中使用maven构建一个项目，在pom.xml中加入依赖： 12345678&lt;dependencies&gt;    &lt;dependency&gt;        &lt;groupId&gt;mysql&lt;&#x2F;groupId&gt;        &lt;artifactId&gt;mysql-connector-java&lt;&#x2F;artifactId&gt;">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-24T08:07:43.000Z">
+<meta property="article:modified_time" content="2020-12-01T10:46:38.618Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -138,125 +142,211 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-JDBC连接Mysql" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JDBC连接Mysql
+    </h1>
+  
+
+        
+        <a href="/2020/11/24/JDBC%E8%BF%9E%E6%8E%A5Mysql/" class="archive-article-date">
+  	<time datetime="2020-11-24T08:07:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-24</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一：JDBC连接"><a href="#一：JDBC连接" class="headerlink" title="一：JDBC连接"></a>一：JDBC连接</h3><p>在IJ中使用maven构建一个项目，在pom.xml中加入依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.47<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Connection</strong>代表一个JDBC连接，在使用JDBC时，它相当于Java程序到数据库的连接（通常是TCP连接）。打开一个Connection时，需要准备URL、用户名和口令，才能成功连接到数据库。</p>
+<p>URL是由数据库厂商指定的格式，Mysql的URL是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbc:mysql:<span class="comment">//&lt;hostname&gt;:&lt;port&gt;/&lt;db&gt;?key1=value1&amp;key2=value2</span></span><br></pre></td></tr></table></figure>
+
+<p>我的Mysql运行在本地<code>localhost</code>，通过<code>SHOW DATABASES</code>和<code>STATUS</code>分别确认了<strong>数据库的名称</strong>和**端口号(port)**，故URL为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbc:mysql:<span class="comment">//localhost:3306/crashcourse?useSSL=false&amp;characterEncoding=utf8</span></span><br></pre></td></tr></table></figure>
+
+<p>其中<code>useSSL=false</code>表示不使用SSL加密，<code>characterEncoding=utf8</code>表示使用UTF-8作为字符编码。</p>
+<p>连接数据库代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JDBC连接的URL, 不同数据库有不同的格式:</span></span><br><span class="line">String JDBC_URL = <span class="string">&quot;jdbc:mysql://localhost:3306/test&quot;</span>;</span><br><span class="line">String JDBC_USER = <span class="string">&quot;root&quot;</span>;</span><br><span class="line">String JDBC_PASSWORD = <span class="string">&quot;password&quot;</span>;</span><br><span class="line"><span class="comment">// 获取连接:</span></span><br><span class="line">Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);</span><br><span class="line"><span class="comment">// <span class="doctag">TODO:</span> 访问数据库...</span></span><br><span class="line"><span class="comment">// 关闭连接:</span></span><br><span class="line">conn.close();</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="二：JDBC查询"><a href="#二：JDBC查询" class="headerlink" title="二：JDBC查询"></a>二：JDBC查询</h3><p>获取到JDBC连接后，下一步我们就可以查询数据库了。查询数据库分以下几步：</p>
+<p>第一步，通过<code>Connection</code>提供的<code>prepareStatement()</code>方法创建一个<code>PreparedStatement</code>对象，用于执行一个查询；</p>
+<p>第二步，执行<code>PreparedStatement</code>对象提供的<code>executeQuery(&quot;SELECT * FROM &lt;db&gt;&quot;)</code>并传入SQL语句，执行查询并获得返回的结果集，使用<code>ResultSet</code>来引用这个结果集；</p>
+<p>第三步，反复调用<code>ResultSet</code>的<code>next()</code>方法并读取每一行结果。</p>
+<p><strong>为什么使用PreparedStatement而不使用<code>Statement</code>：</strong></p>
+<p>使用Statement拼字符串非常容易引发SQL注入的问题，使用PreparedStatement可以<em>完全避免SQL注入</em>的问题。</p>
+<p><strong>使用Java对数据库进行操作时，必须使用PreparedStatement，严禁任何通过参数拼字符串的代码！PreparedStatement始终使用<code>?</code>作为占位符，然后通过<code>setObject(索引，值)</code>设置每个占位符<code>?</code>的值(索引从1开始)。(当然还可以用setString,setBoolean)</strong></p>
+<p><strong>为什么要用 List list = new ArrayList() ,而不用 ArrayList alist = new ArrayList()呢：</strong></p>
+<p>问题就在于List接口有多个实现类，现在你用的是ArrayList，也许哪一天你需要换成其它的实现类，如 LinkedList或者Vector等等，这时你只要改变这一行就行了。</p>
+<p><strong>JDBC查询的返回值总是<code>ResultSet</code>：</strong></p>
+<p><strong>结果集(ResultSet)**是数据中查询结果返回的一种对象，可以说结果集是一个存储查询结果的对象，但是结果集并不仅仅具有存储的功能，他同时还具有操纵数据的功能，可能完成对数据的更新等. 。</strong>结果集读取数据的方法主要是getXXX()，他的参数可以是整型表示第几列（是从1开始的，而不是0），还可以是列名，使用<code>String</code>类型的列名比索引要易读，而且不易出错。返回的是对应的XXX类型的值。<strong>如果对应那列是空值，XXX是对象的话返回XXX型的空值，如果XXX是数字类型，如Float等则返回0,boolean返回false.使用getString()可以返回所有的列的值，不过返回的都是字符串类型的。XXX可以代表的类型有: 基本的数据类型如整型(int)，布尔型(Boolean)，浮点型(Float,Double)等，比特型(byte)，还包括一些特殊的类型，如：日 期类型（java.sql.Date），时间类型(java.sql.Time)，时间戳类型(java.sql.Timestamp)，大数型 (BigDecimal和BigInteger等)等。还可以使用getArray(intcolindex/String columnname)，通过这个方法获得当前行中，colindex所在列的元素组成的对象的数组。使用getAsciiStream(intcolindex/String colname)可以获得该列对应的当前行的ascii流。也就是说所有的getXXX方法都是对当前行进行操作。  结果集从其使用的特点上 可以分为四类，这四类的结果集的所具备的特点都是和Statement语句的创建有关，因为</strong>结果集是通过Statement语句执行后产生的**，所以可以 说，结果集具备何种特点，完全决定于Statement。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//示例：查询了运行在我电脑本地的Mysql中的数据库(&lt;db&gt;)crashcourse中的表(TABLE)中的所有行和列</span></span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.sql.DriverManager;</span><br><span class="line"><span class="keyword">import</span> java.sql.PreparedStatement;</span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span>  <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            List&lt;customers&gt; customers = queryCustomers();  <span class="comment">//查询</span></span><br><span class="line">            customers.forEach(System.out::println);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException throwables) &#123;</span><br><span class="line">            throwables.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> List&lt;customers&gt; <span class="title">querycustomers</span><span class="params">()</span> <span class="keyword">throws</span> SQLException</span>&#123;</span><br><span class="line">        List&lt;customers&gt; customers = <span class="keyword">new</span> ArrayList&lt;customers&gt;();</span><br><span class="line">        <span class="keyword">try</span>(Connection conn = DriverManager.getConnection(jdbcUrl,jdbcUsername,jdbcPassword))&#123;  <span class="comment">//连接数据库</span></span><br><span class="line">            <span class="keyword">try</span>(PreparedStatement ps = conn.prepareStatement(<span class="string">&quot;SELECT * FROM customers&quot;</span>))&#123;   <span class="comment">//传入SQL语句</span></span><br><span class="line">                <span class="keyword">try</span>(ResultSet rs = ps.executeQuery())&#123;    <span class="comment">//执行查询命令获得返回的结果集，并使用ResultSet来引用这个                                                           //结果集</span></span><br><span class="line">                    <span class="keyword">while</span> (rs.next())&#123;</span><br><span class="line">                        customers.add(extractRow(rs));   <span class="comment">//将所有结果存入customers中</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> customers;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> customers <span class="title">extractRow</span><span class="params">(ResultSet rs)</span> <span class="keyword">throws</span> SQLException</span>&#123;</span><br><span class="line">        customers std = <span class="keyword">new</span> customers();</span><br><span class="line">        std.setCust_id(rs.getInt(<span class="string">&quot;cust_id&quot;</span>));</span><br><span class="line">        std.setCust_name(rs.getString(<span class="string">&quot;cust_name&quot;</span>));</span><br><span class="line">        std.setCust_address(rs.getString(<span class="string">&quot;cust_address&quot;</span>));</span><br><span class="line">        std.setCust_city(rs.getString(<span class="string">&quot;cust_city&quot;</span>));</span><br><span class="line">        std.setCust_state(rs.getString(<span class="string">&quot;cust_state&quot;</span>));</span><br><span class="line">        std.setCust_zip(rs.getInt(<span class="string">&quot;cust_zip&quot;</span>));</span><br><span class="line">        std.setCust_country(rs.getString(<span class="string">&quot;cust_country&quot;</span>));</span><br><span class="line">        std.setCust_contact(rs.getString(<span class="string">&quot;cust_contact&quot;</span>));</span><br><span class="line">        std.setCust_email(rs.getString(<span class="string">&quot;cust_email&quot;</span>));</span><br><span class="line">        <span class="keyword">return</span> std;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> String jdbcUrl = <span class="string">&quot;jdbc:mysql://localhost:3306/crashcourse?useSSL=false&amp;characterEncoding=utf8&quot;</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> String jdbcUsername = <span class="string">&quot;root&quot;</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> String jdbcPassword = <span class="string">&quot;***&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构建的customers类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">customers</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> cust_id;</span><br><span class="line">    <span class="keyword">private</span> String cust_name;</span><br><span class="line">    <span class="keyword">private</span> String cust_address;</span><br><span class="line">    <span class="keyword">private</span> String cust_city;</span><br><span class="line">    <span class="keyword">private</span> String cust_state;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> cust_zip;</span><br><span class="line">    <span class="keyword">private</span> String cust_country;</span><br><span class="line">    <span class="keyword">private</span> String cust_contact;</span><br><span class="line">    <span class="keyword">private</span> String cust_email;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCust_id</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cust_id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCust_id</span><span class="params">(<span class="keyword">int</span> cust_id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.cust_id = cust_id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getCust_name</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cust_name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCust_name</span><span class="params">(String cust_name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.cust_name = cust_name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getCust_address</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cust_address;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCust_address</span><span class="params">(String cust_address)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.cust_address = cust_address;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getCust_city</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cust_city;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCust_city</span><span class="params">(String cust_city)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.cust_city = cust_city;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getCust_state</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cust_state;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCust_state</span><span class="params">(String cust_state)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.cust_state = cust_state;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCust_zip</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cust_zip;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCust_zip</span><span class="params">(<span class="keyword">int</span> cust_zip)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.cust_zip = cust_zip;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getCust_country</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cust_country;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCust_country</span><span class="params">(String cust_country)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.cust_country = cust_country;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getCust_contact</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cust_contact;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCust_contact</span><span class="params">(String cust_contact)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.cust_contact = cust_contact;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getCust_email</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cust_email;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCust_email</span><span class="params">(String cust_email)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.cust_email = cust_email;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;customers&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;cust_id=&quot;</span> + cust_id +</span><br><span class="line">                <span class="string">&quot;, cust_name=&#x27;&quot;</span> + cust_name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, cust_address=&#x27;&quot;</span> + cust_address + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, cust_city=&#x27;&quot;</span> + cust_city + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, cust_state=&#x27;&quot;</span> + cust_state + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, cust_zip=&quot;</span> + cust_zip +</span><br><span class="line">                <span class="string">&quot;, cust_country=&#x27;&quot;</span> + cust_country + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, cust_contact=&#x27;&quot;</span> + cust_contact + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, cust_email=&#x27;&quot;</span> + cust_email + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="三：JDBC增、删、改"><a href="#三：JDBC增、删、改" class="headerlink" title="三：JDBC增、删、改"></a><strong>三：JDBC增、删、改</strong></h3><p>增删改查除了用<code>PreparedStatement</code>分别执行对应的SQL语句和最后执行的是<code>executeUpdate()</code>而不是<code>executeQuery</code>，其他代码与</p>
+<p>查询时基本一致。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//插入操作(增)</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertCustomers</span><span class="params">(String cust_name,String cust_address,String cust_city,String cust_state,<span class="keyword">int</span> cust_zip,String cust_country,String cust_contact,String cust_email)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">    <span class="keyword">try</span>(Connection conn = DriverManager.getConnection(jdbcUrl,jdbcUsername,jdbcPassword))&#123;  <span class="comment">//连接数据库</span></span><br><span class="line">        <span class="keyword">try</span> (PreparedStatement ps = conn.prepareStatement(<span class="string">&quot;INSERT INTO customers(cust_name,cust_address,cust_city,cust_state, cust_zip,cust_country,cust_contact,cust_email) VALUES (?,?,?,?,?,?,?,?)&quot;</span>))&#123;</span><br><span class="line">            ps.setObject(<span class="number">1</span>, cust_name);</span><br><span class="line">            ps.setObject(<span class="number">2</span>, cust_address);</span><br><span class="line">            ps.setObject(<span class="number">3</span>, cust_city);</span><br><span class="line">            ps.setObject(<span class="number">4</span>, cust_state);</span><br><span class="line">            ps.setObject(<span class="number">5</span>, cust_zip);</span><br><span class="line">            ps.setObject(<span class="number">6</span>, cust_country);</span><br><span class="line">            ps.setObject(<span class="number">7</span>, cust_contact);</span><br><span class="line">            ps.setObject(<span class="number">8</span>, cust_email);</span><br><span class="line">            ps.executeUpdate();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//删</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">deleteCustomers</span><span class="params">(<span class="keyword">int</span> cust_id)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">    <span class="keyword">try</span>(Connection conn = DriverManager.getConnection(jdbcUrl,jdbcUsername,jdbcPassword))&#123;</span><br><span class="line">        <span class="keyword">try</span>(PreparedStatement ps = conn.prepareStatement(<span class="string">&quot;DELETE FROM  customers WHERE cust_id=?&quot;</span>))&#123;</span><br><span class="line">            ps.setObject(<span class="number">1</span>,cust_id);</span><br><span class="line">            ps.executeUpdate();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//改(更新)(此处以更新cust_id=10006的cust_name列为updataTest为例示范)</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">updateCustomers</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> (Connection conn = DriverManager.getConnection(jdbcUrl,jdbcUsername,jdbcPassword))&#123;</span><br><span class="line">        <span class="keyword">try</span>(PreparedStatement ps = conn.prepareStatement(<span class="string">&quot;UPDATE customers SET ?=? WHERE cust_id=?&quot;</span>))&#123;</span><br><span class="line">            ps.setObject(<span class="number">1</span>,<span class="string">&quot;cust_name&quot;</span>);</span><br><span class="line">            ps.setObject(<span class="number">1</span>,<span class="string">&quot;updataTest&quot;</span>);</span><br><span class="line">            ps.setObject(<span class="number">2</span>,<span class="number">10006</span>);</span><br><span class="line">            ps.executeUpdate();</span><br><span class="line">        &#125;    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jing-an-feng-shao/p/9220085.html">最后总结</a></h3><h3 id="Mysql中其他常用命令"><a href="#Mysql中其他常用命令" class="headerlink" title="Mysql中其他常用命令"></a>Mysql中其他常用命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>show global variables like “%datadir%”;</td>
+<td>查看mysql数据库文件存储位置</td>
+</tr>
+<tr>
+<td>status;</td>
+<td>显示当前mysql的version的各种信息</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+        <span id="busuanzi_container_page_pv">
+          ⋉(●本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次●)⋊
+        </span>
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/15/cmd%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-09-14T16:19:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/15/cmd%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4/">cmd中常用简单命令</a>
-    </h1>
-  
+      
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/24/JDBC%E8%BF%9E%E6%8E%A5Mysql/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/09/%E7%BD%91%E7%BB%9C%E6%98%AF%E6%80%8E%E6%A0%B7%E8%BF%9E%E6%8E%A5%E7%9A%84%20%E9%9A%8F%E8%AE%B0%EF%BC%88%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-09-09T12:39:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-09</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/11/27/Java%E4%B8%AD%E6%96%B9%E6%B3%95%E4%BC%A0%E5%80%BC%E4%B8%8E%E4%BC%A0%E5%BC%95%E7%94%A8%E7%90%86%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java中方法传值与传引用理解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/21/Java%E4%BD%BF%E7%94%A8Okhttp%E5%BA%93%E6%8A%93%E5%8F%96GankIO%E6%95%B0%E6%8D%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java使用Okhttp库抓取GankIO数据</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/09/%E7%BD%91%E7%BB%9C%E6%98%AF%E6%80%8E%E6%A0%B7%E8%BF%9E%E6%8E%A5%E7%9A%84%20%E9%9A%8F%E8%AE%B0%EF%BC%88%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%89/">网络是怎样连接的 随记（第一章）</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">计算机网络——随记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/03/%E9%9B%B6%E5%9F%BA%E7%A1%80hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-09-03T08:38:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/03/%E9%9B%B6%E5%9F%BA%E7%A1%80hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">零基础hexo搭建博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -286,8 +376,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
