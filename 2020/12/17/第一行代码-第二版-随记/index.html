@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>第一行代码(第二版) 随记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一章R文件res文件目录介绍 Android程序编译后会自动生成R文件（R.java）是一个java类(包含了所有 res&#x2F; 目录下资源)，其中包括drawable、layout、string等各色静态内部类（每个静态内部类分别对应着一种资源,如layout静态内部类对应着layout中的界面文件）。而每个静态内部类中的静态常量分别定义为一条资源标识符。具体的内容如下所示： 1234567891">
+  <meta name="description" content="该文章为阅读《第一行代码（第二版）》时的一些随记，用于复习与回顾">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第一行代码(第二版) 随记">
 <meta property="og:url" content="http://example.com/2020/12/17/%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81-%E7%AC%AC%E4%BA%8C%E7%89%88-%E9%9A%8F%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="第一章R文件res文件目录介绍 Android程序编译后会自动生成R文件（R.java）是一个java类(包含了所有 res&#x2F; 目录下资源)，其中包括drawable、layout、string等各色静态内部类（每个静态内部类分别对应着一种资源,如layout静态内部类对应着layout中的界面文件）。而每个静态内部类中的静态常量分别定义为一条资源标识符。具体的内容如下所示： 1234567891">
+<meta property="og:description" content="该文章为阅读《第一行代码（第二版）》时的一些随记，用于复习与回顾">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201129190531498.png">
 <meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201129152206627.png">
@@ -242,7 +242,7 @@
 <meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201214003925375.png">
 <meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201214003904504.png">
 <meta property="article:published_time" content="2020-12-17T13:18:40.000Z">
-<meta property="article:modified_time" content="2020-12-17T13:19:15.351Z">
+<meta property="article:modified_time" content="2020-12-17T13:24:21.356Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201129190531498.png">
@@ -389,7 +389,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="R文件"><a href="#R文件" class="headerlink" title="R文件"></a>R文件</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/fxdaniel/article/details/41452655?utm_medium=distribute.pc_relevant.none-task-blog-title-10&spm=1001.2101.3001.4242">res文件目录介绍</a></p>
+        <p><strong>该文章为阅读《第一行代码（第二版）》时的一些随记，用于复习与回顾</strong></p>
+<a id="more"></a>
+
+<h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="R文件"><a href="#R文件" class="headerlink" title="R文件"></a>R文件</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/fxdaniel/article/details/41452655?utm_medium=distribute.pc_relevant.none-task-blog-title-10&spm=1001.2101.3001.4242">res文件目录介绍</a></p>
 <p>Android程序编译后会自动生成R文件（R.java）是一个java类(包含了所有 res/ 目录下资源)，其中包括drawable、layout、string等各色静态内部类（每个静态内部类分别对应着一种资源,如layout静态内部类对应着layout中的界面文件）。而每个静态内部类中的静态常量分别定义为一条资源标识符。具体的内容如下所示：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">R</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//全是以 publi static final 开头的内部类</span></span><br><span class="line">	</span><br><span class="line">	...</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">layout</span></span>&#123;...&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">id</span></span>&#123;...&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">drawable</span></span>&#123;...&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">mipmap</span></span>&#123;...&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">color</span></span>&#123;...&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">string</span></span>&#123;...&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">style</span></span>&#123;...&#125;</span><br><span class="line">	</span><br><span class="line">	...</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
