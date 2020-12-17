@@ -6,15 +6,246 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>第一行代码(第二版) 随记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="第一章R文件res文件目录介绍 Android程序编译后会自动生成R文件（R.java）是一个java类(包含了所有 res&#x2F; 目录下资源)，其中包括drawable、layout、string等各色静态内部类（每个静态内部类分别对应着一种资源,如layout静态内部类对应着layout中的界面文件）。而每个静态内部类中的静态常量分别定义为一条资源标识符。具体的内容如下所示： 1234567891">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一行代码(第二版) 随记">
+<meta property="og:url" content="http://example.com/2020/12/17/%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81-%E7%AC%AC%E4%BA%8C%E7%89%88-%E9%9A%8F%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="第一章R文件res文件目录介绍 Android程序编译后会自动生成R文件（R.java）是一个java类(包含了所有 res&#x2F; 目录下资源)，其中包括drawable、layout、string等各色静态内部类（每个静态内部类分别对应着一种资源,如layout静态内部类对应着layout中的界面文件）。而每个静态内部类中的静态常量分别定义为一条资源标识符。具体的内容如下所示： 1234567891">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201129190531498.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201129152206627.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217004808810.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217004909390.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208095436964.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208095519417.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208095641973.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208095736245.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208100137520.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201129195542539.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201129195841789.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201129195858856.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201129200112103.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201129214743870.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201129215100970.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201130192718058.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201130232639250.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201130220506567.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201201223220541.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201202170033287.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201202181315108.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201203000319216.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201203115630645.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201203151955991.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201203204751337.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201203220150533.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201203220831316.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201204001007720.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201204002815691.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201204093334287.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201204093237963.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201204205927631.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201204210749941.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201207221727840.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201207221833746.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201207221848969.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201207222831554.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201207223208237.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201207224236337.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201207223451904.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208010709003.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208010952359.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208012047225.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208012013162.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217163347458.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217175813248.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217180010056.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217180206581.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217180309807.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217181259438.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217181606842.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217185112711.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217185157191.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217185327751.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217185618973.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217190107346.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217190203142.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217190433928.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217190637077.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217190914984.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201214231600241.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201214231855807.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201214231948591.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201214232813697.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215090455435.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215094950149.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215091753147.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215091938916.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215094433341.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215095721068.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215151248744.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215153300855.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215154350205.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215160211249.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215190714924.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215190725592.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215190912909.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208150941589.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208154735117.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208183026262.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208183716900.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208185957147.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208190212861.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208200249828.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208200810384.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208201031843.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208201346716.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209181905533.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209125206840.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201208224644669.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209182028368.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209181956573.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209125424122.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209180512615.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209183928276.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209184641061.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209185144227.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209192039729.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209192753776.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209194200586.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209194813763.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209194828053.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209195441081.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209195541102.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209200236382.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209200520510.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209201017238.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209201252205.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209201714898.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209202005249.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209204422960.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209204448074.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209204347642.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209205140132.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209205326919.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209205431340.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209210121333.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209211909537.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209213630857.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216111513067.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216111616712.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216114435715.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216114236041.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216115023180.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216125518917.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216125936664.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216125711531.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216125827356.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216181223125.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216181514185.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216182143594.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216182347332.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216182500233.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216182604679.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216182622541.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216182936683.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216182950461.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216183311243.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216183354963.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216183544309.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216183642553.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217093123319.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217094036631.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217094714901.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217095248525.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217095415301.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217104546413.png">
+<meta property="og:image" content="c:/Users/微星/Desktop/QQ截图20201217104811.bmp">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217111334505.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217111453654.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217111602584.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217111638406.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217111704777.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217112609953.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217113930813.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217115759223.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217120055230.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217125528609.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217145909671.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217125948371.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217145729000.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217150217510.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217150151040.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217150341990.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217150408040.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217150432516.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217150601046.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217150745024.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217150828336.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217150842101.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217150915702.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217151102704.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217151120093.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217151131580.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201217151225692.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215195442278.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215195603423.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215195739229.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215201523876.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215210723145.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215211011725.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215211121555.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215212155823.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215212459140.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215212700487.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215213611728.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216102953101.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216004335486.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216004529922.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216093322063.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215222436162.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216001717968.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216001750139.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216002013203.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216002029943.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216003533124.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216003837654.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216003919385.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201216004043512.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201209230525478.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201210164310097.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213110353923.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213111523439.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213120438786.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213120944424.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213121224100.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213160114967.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213160318444.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213160433528.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213160554282.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201215210617069.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213182543618.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213182517947.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213183529986.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213190226330.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213215539998.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213233417956.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213202838177.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213233540351.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213234244952.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213234602938.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201213235255733.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201214001818376.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201214003832348.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201214003925375.png">
+<meta property="og:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201214003904504.png">
+<meta property="article:published_time" content="2020-12-17T13:18:40.000Z">
+<meta property="article:modified_time" content="2020-12-17T13:19:15.351Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/微星/AppData/Roaming/Typora/typora-user-images/image-20201129190531498.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -138,16 +369,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-第一行代码-第二版-随记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-第一行代码-第二版-随记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/17/%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81-%E7%AC%AC%E4%BA%8C%E7%89%88-%E9%9A%8F%E8%AE%B0/">第一行代码(第二版) 随记</a>
+    <h1 class="article-title" itemprop="name">
+      第一行代码(第二版) 随记
     </h1>
   
 
@@ -998,21 +1227,84 @@
     </div>
     <div class="article-info article-info-index">
       
+        <span id="busuanzi_container_page_pv">
+          ⋉(●本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次●)⋊
+        </span>
       
       
+      
+      
+
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/17/%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81-%E7%AC%AC%E4%BA%8C%E7%89%88-%E9%9A%8F%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
 
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/17/%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81-%E7%AC%AC%E4%BA%8C%E7%89%88-%E9%9A%8F%E8%AE%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/27/Java%E4%B8%AD%E6%96%B9%E6%B3%95%E4%BC%A0%E5%80%BC%E4%B8%8E%E4%BC%A0%E5%BC%95%E7%94%A8%E7%90%86%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中方法传值与传引用理解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -1032,639 +1324,14 @@
 
 
 
-
   
-    <article id="post-Java中方法传值与传引用理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/27/Java%E4%B8%AD%E6%96%B9%E6%B3%95%E4%BC%A0%E5%80%BC%E4%B8%8E%E4%BC%A0%E5%BC%95%E7%94%A8%E7%90%86%E8%A7%A3/">Java中方法传值与传引用理解</a>
-    </h1>
   
 
-        
-        <a href="/2020/11/27/Java%E4%B8%AD%E6%96%B9%E6%B3%95%E4%BC%A0%E5%80%BC%E4%B8%8E%E4%BC%A0%E5%BC%95%E7%94%A8%E7%90%86%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2020-11-27T02:29:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/jiangnan2014/article/details/22944075">该文为转载总结</a></p>
-<p>Java中的方法总是传值的，当方法中传入的是对象时，实际上是传递了对象引用的副本，当在方法中对该对象引用的副本进行修改时，相当于也影响了方法外的实参，但在方法中如果让传入对象引用副本引用了一个新的对象，则之后的改变不会影响到方法外传入的实参。</p>
-<p>当方法中传入的是基本数据类型的时候，相当于传递了一个基本数据类型的副本，改变的是该副本的内容，故不会对方法外传入的实参造成影响。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/27/Java%E4%B8%AD%E6%96%B9%E6%B3%95%E4%BC%A0%E5%80%BC%E4%B8%8E%E4%BC%A0%E5%BC%95%E7%94%A8%E7%90%86%E8%A7%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JDBC连接Mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/24/JDBC%E8%BF%9E%E6%8E%A5Mysql/">JDBC连接Mysql</a>
-    </h1>
   
 
-        
-        <a href="/2020/11/24/JDBC%E8%BF%9E%E6%8E%A5Mysql/" class="archive-article-date">
-  	<time datetime="2020-11-24T08:07:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一：JDBC连接"><a href="#一：JDBC连接" class="headerlink" title="一：JDBC连接"></a>一：JDBC连接</h3><p>在IJ中使用maven构建一个项目，在pom.xml中加入依赖：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.47<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/24/JDBC%E8%BF%9E%E6%8E%A5Mysql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java使用Okhttp库抓取GankIO数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/21/Java%E4%BD%BF%E7%94%A8Okhttp%E5%BA%93%E6%8A%93%E5%8F%96GankIO%E6%95%B0%E6%8D%AE/">Java使用Okhttp库抓取GankIO数据</a>
-    </h1>
   
 
-        
-        <a href="/2020/11/21/Java%E4%BD%BF%E7%94%A8Okhttp%E5%BA%93%E6%8A%93%E5%8F%96GankIO%E6%95%B0%E6%8D%AE/" class="archive-article-date">
-  	<time datetime="2020-11-21T10:41:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一：使用okhttp3发送无参GET请求"><a href="#一：使用okhttp3发送无参GET请求" class="headerlink" title="一：使用okhttp3发送无参GET请求"></a>一：使用okhttp3发送无参GET请求</h3><p><strong>爬虫</strong>：模拟浏览器的url请求向服务器发送请求并获得返回。</p>
-<p><strong>在网上下载使用okhttp3所需要的jar包：</strong></p>
-<p>okio-2.7.0.jar；okhttp-4.8.0.jar；kotlin-stdlib-1.3.11.jar;    (版本可变)</p>
-<p>在IJ中创建一般项目后导入三个jar包(<a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/b0b63dbfe25df24a483070a1.html">导包教程</a>)</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/21/Java%E4%BD%BF%E7%94%A8Okhttp%E5%BA%93%E6%8A%93%E5%8F%96GankIO%E6%95%B0%E6%8D%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/10/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Git常用命令</a>
-    </h1>
-  
-
-        
-        <a href="/2020/11/10/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-11-10T15:16:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/10/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MySQL创建样例表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/29/MySQL%E5%88%9B%E5%BB%BA%E6%A0%B7%E4%BE%8B%E8%A1%A8/">MySQL创建样例表</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/29/MySQL%E5%88%9B%E5%BB%BA%E6%A0%B7%E4%BE%8B%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2020-10-29T00:57:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/29/MySQL%E5%88%9B%E5%BB%BA%E6%A0%B7%E4%BE%8B%E8%A1%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java-Error-记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/15/Java-Error-%E8%AE%B0%E5%BD%95/">Java Error 记录</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/15/Java-Error-%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-10-14T17:13:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Java Error 记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/15/Java-Error-%E8%AE%B0%E5%BD%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-cmd中常用简单命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/15/cmd%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4/">cmd中常用简单命令</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/15/cmd%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-09-14T16:19:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="cmd中常用的命令"><a href="#cmd中常用的命令" class="headerlink" title="cmd中常用的命令"></a>cmd中常用的命令</h3><h4 id="1-cd"><a href="#1-cd" class="headerlink" title="1.cd"></a>1.cd</h4><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>cd \</code></td>
-<td>回到根路径</td>
-</tr>
-<tr>
-<td><code>cd ..</code></td>
-<td>回到上一级路径</td>
-</tr>
-<tr>
-<td><code>cd 路径</code></td>
-<td>到该路径下(注意相对路径和绝对路径)</td>
-</tr>
-</tbody></table>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/15/cmd%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-网络是怎样连接的 随记（第一章）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/09/%E7%BD%91%E7%BB%9C%E6%98%AF%E6%80%8E%E6%A0%B7%E8%BF%9E%E6%8E%A5%E7%9A%84%20%E9%9A%8F%E8%AE%B0%EF%BC%88%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%89/">网络是怎样连接的 随记（第一章）</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/09/%E7%BD%91%E7%BB%9C%E6%98%AF%E6%80%8E%E6%A0%B7%E8%BF%9E%E6%8E%A5%E7%9A%84%20%E9%9A%8F%E8%AE%B0%EF%BC%88%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-09-09T12:39:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一-生成HTTP请求消息"><a href="#一-生成HTTP请求消息" class="headerlink" title="一.生成HTTP请求消息"></a>一.生成HTTP请求消息</h3><h4 id="1-URL-网址-开头："><a href="#1-URL-网址-开头：" class="headerlink" title="1.URL(网址)开头："></a>1.URL(网址)开头：</h4><p><strong>以“http:” “ftp:” “file:” “mailto:”等开头</strong>，这部分文字表示浏览器应当使用的访问方法(如：访问Web服务器时用HTTP协议，访问FTP服务器(上下载和上传文件)时用FTP协议)。
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">计算机网络——随记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/09/%E7%BD%91%E7%BB%9C%E6%98%AF%E6%80%8E%E6%A0%B7%E8%BF%9E%E6%8E%A5%E7%9A%84%20%E9%9A%8F%E8%AE%B0%EF%BC%88%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-零基础hexo搭建博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/03/%E9%9B%B6%E5%9F%BA%E7%A1%80hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">零基础hexo搭建博客</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/03/%E9%9B%B6%E5%9F%BA%E7%A1%80hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-09-03T08:38:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="零基础运用hexo框架搭建个人博客"><a href="#零基础运用hexo框架搭建个人博客" class="headerlink" title="零基础运用hexo框架搭建个人博客"></a>零基础运用hexo框架搭建个人博客</h1><h2 id="一-前提准备（以下所有演示均已widows系统为例，mac用户可观看文末视频链接配合文档进行搭建）"><a href="#一-前提准备（以下所有演示均已widows系统为例，mac用户可观看文末视频链接配合文档进行搭建）" class="headerlink" title="一.前提准备（以下所有演示均已widows系统为例，mac用户可观看文末视频链接配合文档进行搭建）"></a>一.前提准备（以下所有演示均已widows系统为例，mac用户可观看文末视频链接配合文档进行搭建）</h2><h3 id="1-Git下载安装与环境配置"><a href="#1-Git下载安装与环境配置" class="headerlink" title="1.Git下载安装与环境配置"></a>1.Git下载安装与环境配置</h3><p>●网上教程众多，此处就不累述。给出其中一个参考链接<a target="_blank" rel="noopener" href="https://blog.csdn.net/huangqqdy/article/details/83032408">Git下载、安装与环境配置</a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/03/%E9%9B%B6%E5%9F%BA%E7%A1%80hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -1694,8 +1361,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
