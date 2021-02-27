@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://blog-1302639422.cos.ap-chengdu.myqcloud.com/4.png">
 <meta property="og:image" content="https://blog-1302639422.cos.ap-chengdu.myqcloud.com/5.png">
 <meta property="article:published_time" content="2020-09-03T08:38:21.000Z">
-<meta property="article:modified_time" content="2020-12-17T13:21:09.208Z">
+<meta property="article:modified_time" content="2021-02-27T04:00:55.091Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary">
@@ -173,11 +173,22 @@
 <h3 id="2-Node-js下载安装与配置"><a href="#2-Node-js下载安装与配置" class="headerlink" title="2.Node.js下载安装与配置"></a>2.Node.js下载安装与配置</h3><p>●<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js下载链接</a>下载左边LTS长期支持版。安装完成后打开cmd（同时按住Win+R，输入cmd，打开命令提示符程序），输入node -v和npm -v**(此处注意-v前面有空格，后面所有命令一样，均需注意空格，不输入空格则会造成错误)**查看是否安装成功，成功则会类似下图所示。     <img src="https://blog-1302639422.cos.ap-chengdu.myqcloud.com/1.png"></p>
 <p>●下载npm的镜像源cnpm：在cmd中输入npm install -g cnpm --registry=<a target="_blank" rel="noopener" href="https://registry.npm/taobao.org%E8%BF%9B%E8%A1%8C%E4%B8%8B%E8%BD%BD%E3%80%82">https://registry.npm/taobao.org进行下载。</a>   下载完成后，在cmd中输入cnpm和cnpm -v查看是否安装成功。</p>
 <h3 id="3-Markdown编辑器下载"><a href="#3-Markdown编辑器下载" class="headerlink" title="3.Markdown编辑器下载"></a>3.Markdown编辑器下载</h3><p>●编写个人博客文章需要使用Markdown语言，去网上任意搜索下载一个主流Markdown编辑器即可，个人推荐使用Typora<a target="_blank" rel="noopener" href="https://typora.io/">下载链接</a>。</p>
+<p><strong>务必注意图片的地址以及存放位置</strong></p>
+<p>个人使用Typora，故Typora上传图片解决方案查看<a href>hexo + Typora 图片上传问题</a></p>
 <h2 id="二：个人博客搭建"><a href="#二：个人博客搭建" class="headerlink" title="二：个人博客搭建"></a>二：个人博客搭建</h2><h3 id="1-hexo下载使用"><a href="#1-hexo下载使用" class="headerlink" title="1.hexo下载使用"></a>1.hexo下载使用</h3><p>●在cmd中输入cnpm install -g hexo-cli，下载完成后输入hexo -v查看是否安装成功。<br>●新建一个文件夹blog，在该文件夹中，右键点击Git Bush Here(后续称为黑框)(或者在任意地方打开黑框然后输入cd 文件夹的位置(eg:cd E:\myblog)),然后输入hexo init，等待安装完成后可输入ls -l查看是否安装成功。<br>●再输入hexo s，会出现网址(记住)，将网址输入浏览器中即可查看已创建的本地博客网页(查看过程中不要按ctrl+c，当查看完后再按ctrl+c即停止hexo运行)(有时可能出现网址无法访问的现象，是由于hexo默认的端口4000被占用了，在黑框中输入hexo s -p 5000即可访问。如若还是无法访问也影响不大，对后续将网页部署到远端后进行访问没有影响)。   </p>
 <h3 id="2-将个人博客网页部署到远端Github-Gitee-以下演示以Github为例，Gitee操作类似"><a href="#2-将个人博客网页部署到远端Github-Gitee-以下演示以Github为例，Gitee操作类似" class="headerlink" title="2.将个人博客网页部署到远端Github/Gitee(以下演示以Github为例，Gitee操作类似)"></a>2.将个人博客网页部署到远端Github/Gitee(以下演示以Github为例，Gitee操作类似)</h3><p>●登录Github网页，新建一个仓库(即点击右上角的加号后，再点击New repository)，在Repository name中需填写格式’自己的GitHub名字.github.io’，必须按该格式填写，其余地方随意。<br>●在文件夹blog中打开黑框后输入cnpm install --save hexo-deployer-git<br>●打开文件夹blog中的_config.yml，找到如下图处并按图进行修改，马赛克处填入自己的Github账号(注意每个冒号后都要加空格)。</p>
 <p><img src="https://blog-1302639422.cos.ap-chengdu.myqcloud.com/2.png"><br>●再在黑框中输入hexo d，可能会出现如下图所示，即在上面输入自己Github账号下面输入密码，之后即成功，再刷新打开网页中的仓库即可看到成功，此时个人博客网址即使：https://自己Github用户名.github.io,至此个人博客即是搭建成功。   </p>
 <p><img src="https://blog-1302639422.cos.ap-chengdu.myqcloud.com/3.png"></p>
-<h3 id="3-在个人博客中发表文章"><a href="#3-在个人博客中发表文章" class="headerlink" title="3.在个人博客中发表文章"></a>3.在个人博客中发表文章</h3><p>●在黑框中输入hexo n “文章标题”，即生成一篇文章在类似文件夹E:\myblog\source_posts中，打开其在Markdown编辑其中即可进行编写。(Markdown的语法很简单，自行上网查找学习)</p>
+<h3 id="3-在个人博客中发表文章"><a href="#3-在个人博客中发表文章" class="headerlink" title="3.在个人博客中发表文章"></a>3.在个人博客中发表文章</h3><p>●新建文章</p>
+<ul>
+<li><p>方法一：在黑框中输入hexo n “文章标题”，即生成一篇文章在类似文件夹E:\myblog\source_posts中，打开其在Markdown编辑其中即可进行编写。(Markdown的语法很简单，自行上网查找学习)、</p>
+</li>
+<li><p>方法二：新建一个.md文件，在开头固定格式（title为显示的文章题目，date为显示的文章时间，tags为显示的文章的标签）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: xxx</span><br><span class="line">date: xxxx-xx-xx xx:xx:xx</span><br><span class="line">tags: xx</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p><strong>ps：title，date和tag的冒号后均需留有一个空格</strong></p>
+</li>
+</ul>
 <p>●编写完成保存后，在黑框中分别依次输入hexo clean、hexo g、hexo s，运行完成后打开本地博客网页查看博客修改是否无问题，确认后再在黑框输入hexo d，这样即是成功在个人博客中发表一篇文章。</p>
 <h2 id="三-博客主题的切换以及样式修改"><a href="#三-博客主题的切换以及样式修改" class="headerlink" title="三.博客主题的切换以及样式修改"></a>三.博客主题的切换以及样式修改</h2><h3 id="1-主题的修改-以下演示以yilia为例"><a href="#1-主题的修改-以下演示以yilia为例" class="headerlink" title="1.主题的修改(以下演示以yilia为例)"></a>1.主题的修改(以下演示以yilia为例)</h3><p>●在黑框中输入git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia后，查看yilia文件夹是否在landscape文件夹所在的themes文件夹中，若不在将yilia文件夹挪到和landscape文件夹一起。</p>
 <p><img src="https://blog-1302639422.cos.ap-chengdu.myqcloud.com/4.png"></p>
@@ -284,6 +295,11 @@
     </a>
   
   
+    <a href="/2020/02/21/Android_Studio%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android_Studio的使用技巧</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
 </nav>
 
 
@@ -336,7 +352,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 John Doe
+    		&copy; 2021 John Doe
 		</div>
 		<span id="busuanzi_container_site_pv">
 			本站总访问量<span id="busuanzi_value_site_pv"></span>次
@@ -422,11 +438,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教程</a>
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">个人博客教程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">计算机网络——随记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
               </li>
             
             <div class="clearfix"></div>
