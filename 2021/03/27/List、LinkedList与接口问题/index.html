@@ -6,29 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>LinkedList与多接口实现 | Hexo</title>
+  <title>初识Android事件分发机制 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="LinkedList与多接口实现一个类实现多个接口">
+  <meta name="description" content="List、LinkedList与接口问题List与一个接口多个实现类一个接口多个实现类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LinkedList与多接口实现">
-<meta property="og:url" content="http://example.com/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/index.html">
+<meta property="og:title" content="初识Android事件分发机制">
+<meta property="og:url" content="http://example.com/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="LinkedList与多接口实现一个类实现多个接口">
+<meta property="og:description" content="List、LinkedList与接口问题List与一个接口多个实现类一个接口多个实现类">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210416151608311.png">
-<meta property="og:image" content="http://example.com/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210409102234475.png">
-<meta property="og:image" content="http://example.com/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210409115702832.png">
-<meta property="og:image" content="http://example.com/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210409095742932.png">
-<meta property="og:image" content="http://example.com/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210409095809459.png">
-<meta property="og:image" content="http://example.com/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210409095847624.png">
-<meta property="og:image" content="http://example.com/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210409103722175.png">
-<meta property="og:image" content="http://example.com/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210409103749459.png">
-<meta property="article:published_time" content="2021-03-27T03:31:08.000Z">
-<meta property="article:modified_time" content="2021-05-26T11:45:07.479Z">
+<meta property="og:image" content="http://example.com/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210416155330419.png">
+<meta property="og:image" content="http://example.com/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210416151608311.png">
+<meta property="og:image" content="http://example.com/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210409102234475.png">
+<meta property="og:image" content="http://example.com/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210409115702832.png">
+<meta property="og:image" content="http://example.com/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210409095742932.png">
+<meta property="og:image" content="http://example.com/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210409095809459.png">
+<meta property="og:image" content="http://example.com/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210409095847624.png">
+<meta property="og:image" content="http://example.com/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210409103722175.png">
+<meta property="og:image" content="http://example.com/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210409103749459.png">
+<meta property="article:published_time" content="2021-03-27T03:27:19.000Z">
+<meta property="article:modified_time" content="2021-05-26T11:48:29.534Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Java基础">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210416151608311.png">
+<meta name="twitter:image" content="http://example.com/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210416155330419.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -152,29 +153,52 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LinkedList与多接口实现" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-List、LinkedList与接口问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      LinkedList与多接口实现
+      初识Android事件分发机制
     </h1>
   
 
         
-        <a href="/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-  	<time datetime="2021-03-27T03:31:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-27</time>
+        <a href="/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2021-03-27T03:27:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="LinkedList与多接口实现"><a href="#LinkedList与多接口实现" class="headerlink" title="LinkedList与多接口实现"></a>LinkedList与多接口实现</h1><h2 id="一个类实现多个接口"><a href="#一个类实现多个接口" class="headerlink" title="一个类实现多个接口"></a>一个类实现多个接口</h2><a id="more"></a>
+        <h1 id="List、LinkedList与接口问题"><a href="#List、LinkedList与接口问题" class="headerlink" title="List、LinkedList与接口问题"></a>List、LinkedList与接口问题</h1><h2 id="List与一个接口多个实现类"><a href="#List与一个接口多个实现类" class="headerlink" title="List与一个接口多个实现类"></a>List与一个接口多个实现类</h2><h3 id="一个接口多个实现类"><a href="#一个接口多个实现类" class="headerlink" title="一个接口多个实现类"></a>一个接口多个实现类</h3><a id="more"></a>
 
-<img src="/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210416151608311.png" alt="image-20210416151608311" style="zoom: 80%;">
+<img src="/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210416155330419.png" alt="image-20210416155330419" style="zoom:67%;">
+
+<p>如上图所示，<strong>类SonA和SonB实现了接口Son</strong></p>
+<ul>
+<li><p>当以 <code>Son SonSonA = new SonA();</code> 和 <code>Son SonSonB = new SonB();</code>实例化时，<strong>SonSonA 和 SonSonB 只能调用接口Son中定义了的方法。</strong></p>
+<p>即只能调用各自实现了的 <code>printfSon()</code>方法，不能调用各自自己独有的 <code>printfSonA()</code> 和 <code>printfSonB()</code> 方法</p>
+</li>
+<li><p>当以 <code>SonA sonA = new SonA();</code> 和 <code>SonB sonB = new SonB();</code>实例化时，sonA可以调用 SonA 中的所有对外开放的方法，sonB可以调用 SonB 中的所有对外开放的方法。</p>
+<p>即 sonA 可以调用 printfSon() 和 printfSonA()方法，sonB可以调用 printfSon() 和 printfSonB() 方法</p>
+</li>
+</ul>
+<h3 id="面向接口编程思想"><a href="#面向接口编程思想" class="headerlink" title="面向接口编程思想"></a>面向接口编程思想</h3><p>首先，面向接口编程和面向对象编程并不是平级的，它并不是比面向对象编程更先进的一种独立的编程思想，而是附属于面向对象思想体系，属于其一部分。或者说，<strong>它是面向对象编程体系中的思想精髓之一</strong>。</p>
+<p><strong>采用了面向接口编程方式</strong>，也就是上述示例中的  <code>Son SonSonA = new SonA();</code> 和 <code>Son SonSonB = new SonB();</code></p>
+<p>就能<strong>通过接口很大限度上规范开发人员的实现规则</strong>，因为你现在只能调用接口的方法</p>
+<p><strong>同时一个类可能实现了不同的接口，用面向接口编程方式实例化对象也可以指明实例化的对象的作用</strong></p>
+<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p><strong>ArrayList 和 LinkedList 实现了List 接口</strong></p>
+<p>即一般情况下均用如下方法创建ArrayList对象和LinkedList对象   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Object&gt; list = <span class="keyword">new</span> ArrayList&lt;Object&gt;()	<span class="comment">//创建ArrayList对象</span></span><br><span class="line">List&lt;Object&gt; list = <span class="keyword">new</span> LinkedList&lt;Object&gt;()	<span class="comment">//创建LinkedList对象    </span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="LinkedList与多接口实现"><a href="#LinkedList与多接口实现" class="headerlink" title="LinkedList与多接口实现"></a>LinkedList与多接口实现</h2><h3 id="一个类实现多个接口"><a href="#一个类实现多个接口" class="headerlink" title="一个类实现多个接口"></a>一个类实现多个接口</h3><img src="/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210416151608311.png" alt="image-20210416151608311" style="zoom: 80%;">
 
 <p><strong>如上图所示：</strong></p>
 <p><strong>testTemp类实现了接口A和B</strong></p>
@@ -189,11 +213,11 @@
 <p>即可以调用<code>printfA</code>、<code>printfB</code>和<code>printfT</code>方法</p>
 </li>
 </ul>
-<img src="/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210409102234475.png" alt="image-20210409102234475" style="zoom: 67%;">
+<img src="/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210409102234475.png" alt="image-20210409102234475" style="zoom: 67%;">
 
 
 
-<h2 id="里氏替换原则"><a href="#里氏替换原则" class="headerlink" title="里氏替换原则"></a>里氏替换原则</h2><p><strong>里氏替换原则设定规范了如何正确使用继承</strong></p>
+<h3 id="里氏替换原则"><a href="#里氏替换原则" class="headerlink" title="里氏替换原则"></a>里氏替换原则</h3><p><strong>里氏替换原则设定规范了如何正确使用继承</strong></p>
 <p><strong>里氏替换原则：</strong></p>
 <ul>
 <li><p><strong>所有使用基类的地方必须能够使用子类进行替换</strong>，而程序的行为不会发生任何变化(替换为子类之后不会产生错误或者异常)</p>
@@ -206,7 +230,7 @@
 <ul>
 <li><p><strong>组合：</strong></p>
 <p>在A类中实例化B类，这样就可以在A类中调用B类中的方法</p>
-<img src="/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210409115702832.png" alt="image-20210409115702832" style="zoom:67%;">
+<img src="/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210409115702832.png" alt="image-20210409115702832" style="zoom:67%;">
 
 
 
@@ -216,19 +240,19 @@
 </ul>
 </li>
 </ul>
-<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><p><strong>LinkedList实现了List接口和Deque接口</strong></p>
+<h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h3><p><strong>LinkedList实现了List接口和Deque接口</strong></p>
 <ul>
 <li><p><strong>实现了Deque接口中的方法：</strong></p>
 <p><strong><code>Deque&lt;Object&gt; deque = new LinkedList&lt;Object&gt;();</code></strong></p>
 </li>
 </ul>
-<p><img src="/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210409095742932.png" alt="image-20210409095742932" style="zoom: 67%;"><img src="/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210409095809459.png" alt="image-20210409095809459" style="zoom: 67%;"></p>
-<img src="/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210409095847624.png" alt="image-20210409095847624" style="zoom:80%;">
+<p><img src="/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210409095742932.png" alt="image-20210409095742932" style="zoom: 67%;"><img src="/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210409095809459.png" alt="image-20210409095809459" style="zoom: 67%;"></p>
+<img src="/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210409095847624.png" alt="image-20210409095847624" style="zoom:80%;">
 
 <ul>
 <li><p><strong>实现了List接口中的方法：</strong></p>
 <p><strong><code>List&lt;Object&gt; list = new LinkedList&lt;Object&gt;();</code></strong></p>
-<p><img src="/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210409103722175.png" alt="image-20210409103722175" style="zoom: 67%;"><img src="/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/image-20210409103749459.png" alt="image-20210409103749459" style="zoom: 67%;"></p>
+<p><img src="/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210409103722175.png" alt="image-20210409103722175" style="zoom: 67%;"><img src="/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/image-20210409103749459.png" alt="image-20210409103749459" style="zoom: 67%;"></p>
 </li>
 </ul>
 
@@ -305,7 +329,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/27/LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -357,7 +381,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.</span> <span class="toc-text">LinkedList与多接口实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%B1%BB%E5%AE%9E%E7%8E%B0%E5%A4%9A%E4%B8%AA%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.</span> <span class="toc-text">一个类实现多个接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99"><span class="toc-number">1.2.</span> <span class="toc-text">里氏替换原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LinkedList"><span class="toc-number">1.3.</span> <span class="toc-text">LinkedList</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">List、LinkedList与接口问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#List%E4%B8%8E%E4%B8%80%E4%B8%AA%E6%8E%A5%E5%8F%A3%E5%A4%9A%E4%B8%AA%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-number">1.1.</span> <span class="toc-text">List与一个接口多个实现类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E6%8E%A5%E5%8F%A3%E5%A4%9A%E4%B8%AA%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-number">1.1.1.</span> <span class="toc-text">一个接口多个实现类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E6%8E%A5%E5%8F%A3%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3"><span class="toc-number">1.1.2.</span> <span class="toc-text">面向接口编程思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#List"><span class="toc-number">1.1.3.</span> <span class="toc-text">List</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LinkedList%E4%B8%8E%E5%A4%9A%E6%8E%A5%E5%8F%A3%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.</span> <span class="toc-text">LinkedList与多接口实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%B1%BB%E5%AE%9E%E7%8E%B0%E5%A4%9A%E4%B8%AA%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.2.1.</span> <span class="toc-text">一个类实现多个接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99"><span class="toc-number">1.2.2.</span> <span class="toc-text">里氏替换原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LinkedList"><span class="toc-number">1.2.3.</span> <span class="toc-text">LinkedList</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
