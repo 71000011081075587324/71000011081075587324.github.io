@@ -140,6 +140,156 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-leetcode中常用方法和属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/17/leetcode%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E5%92%8C%E5%B1%9E%E6%80%A7/">leetcode常用方法和属性</a>
+    </h1>
+  
+
+        
+        <a href="/2021/06/17/leetcode%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E5%92%8C%E5%B1%9E%E6%80%A7/" class="archive-article-date">
+  	<time datetime="2021-06-17T11:18:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="leetcode常用方法和属性："><a href="#leetcode常用方法和属性：" class="headerlink" title="leetcode常用方法和属性："></a>leetcode常用方法和属性：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//String类是不可变类，任何对String的改变都 会引发新的String对象的生成</span></span><br><span class="line"><span class="comment">//StringBuffer、StringBuilder则是可变类，任何对它所指代的字符串的改变都不会产生新的对象</span></span><br><span class="line"><span class="comment">//		StringBufferd是线程安全的，StringBuilder是线程不安全的</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//String</span></span><br><span class="line">string.toCharArray()	<span class="comment">//返回字符串对应的char数组</span></span><br><span class="line">string.charAt(<span class="keyword">int</span> x)	<span class="comment">//返回某个索引处的字符</span></span><br><span class="line">string.length()	<span class="comment">//返回字符串长度</span></span><br><span class="line">string.substring(<span class="keyword">int</span> beginIndex)	<span class="comment">//返回字符串的子字符串</span></span><br><span class="line">string.substring(<span class="keyword">int</span> beginIndex, <span class="keyword">int</span> endIndex)</span><br><span class="line">String.valueOf(Object object)	<span class="comment">//传入参数可为boolean; char; char[]; char[] data, int offset, int count; 									//double; 	float; int; long; Object类型</span></span><br><span class="line">    							<span class="comment">//返回值为删除头尾空白符的字符串</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//StringBuilder	(StringBuffer和其用法几乎一摸一样)</span></span><br><span class="line">stringBuffer.append(String/StringBuilder str)		<span class="comment">//尾部添加字符串</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">Arrays.sort(Object[] array)	<span class="comment">//数组排序(默认为从小到大排序，且只能对一维数组排序) </span></span><br><span class="line">Arrays.toString(<span class="keyword">int</span>[] array)	<span class="comment">//数组转成字符串</span></span><br><span class="line">Arrays.equals(<span class="keyword">int</span>[] arrayA, <span class="keyword">int</span>[] arrayB)    <span class="comment">//比较两个数组是否相等</span></span><br><span class="line">Arrays.fill(<span class="keyword">int</span>[] a,<span class="keyword">int</span> form,<span class="keyword">int</span> to, <span class="keyword">int</span> <span class="keyword">var</span>)		 <span class="comment">//a--替换值的数组 form--替换开始位置（包括） to--替换结束位置（不包括） var--要替换的值</span></span><br><span class="line">Arrays.fill(<span class="keyword">int</span>[] a, <span class="keyword">int</span> <span class="keyword">var</span>)	<span class="comment">//将数组中的值全部变为值 var</span></span><br><span class="line">array.length	<span class="comment">//一维数组的长度/二维数组的行数</span></span><br><span class="line">array[i].length	<span class="comment">//二维数组的列数</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">Integer.valueOf(String string)	<span class="comment">//string to integer，该方法也可传入多种类型参数</span></span><br><span class="line">Integer.toString(String string)	<span class="comment">//string to integer</span></span><br><span class="line">String.valueOf(Integer integer)	<span class="comment">//integer to string，该方法见上面，可传入多种类型值，此处只是用法之一</span></span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/06/17/leetcode%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E5%92%8C%E5%B1%9E%E6%80%A7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java-Lamda表达式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/28/Java-Lamda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">Java-Lamda表达式</a>
+    </h1>
+  
+
+        
+        <a href="/2021/05/28/Java-Lamda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2021-05-28T05:15:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Java-Lamda表达式"><a href="#Java-Lamda表达式" class="headerlink" title="Java-Lamda表达式"></a>Java-Lamda表达式</h2><img src="/2021/05/28/Java-Lamda%E8%A1%A8%E8%BE%BE%E5%BC%8F/image-20210518095107417.png" alt="image-20210518095107417" style="zoom: 67%;">
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/05/28/Java-Lamda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Android事件分发机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -297,6 +447,82 @@
 
 
   
+    <article id="post-leetcode 数组和字符串热题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/07/leetcode%20%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%83%AD%E9%A2%98/">leetcode 数组和字符串热题</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/07/leetcode%20%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%83%AD%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2021-04-07T13:17:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="leetcode-数组和字符串热题"><a href="#leetcode-数组和字符串热题" class="headerlink" title="leetcode 数组和字符串热题"></a>leetcode 数组和字符串热题</h2><p><strong>（题解参考leetcode）</strong></p>
+<h3 id="常用方法和属性："><a href="#常用方法和属性：" class="headerlink" title="常用方法和属性："></a>常用方法和属性：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//String类是不可变类，任何对String的改变都 会引发新的String对象的生成</span></span><br><span class="line"><span class="comment">//StringBuffer、StringBuilder则是可变类，任何对它所指代的字符串的改变都不会产生新的对象</span></span><br><span class="line"><span class="comment">//		StringBufferd是线程安全的，StringBuilder是线程不安全的</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//String</span></span><br><span class="line">string.toCharArray()	<span class="comment">//返回字符串对应的char数组</span></span><br><span class="line">string.charAt(<span class="keyword">int</span> x)	<span class="comment">//返回某个索引处的字符</span></span><br><span class="line">string.length()	<span class="comment">//返回字符串长度</span></span><br><span class="line">string.substring(<span class="keyword">int</span> beginIndex)	<span class="comment">//返回字符串的子字符串</span></span><br><span class="line">string.substring(<span class="keyword">int</span> beginIndex, <span class="keyword">int</span> endIndex)</span><br><span class="line">String.valueOf(Object object)	<span class="comment">//传入参数可为boolean; char; char[]; char[] data, int offset, int count; 									//double; 	float; int; long; Object类型</span></span><br><span class="line">    							<span class="comment">//返回值为删除头尾空白符的字符串</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//StringBuilder	(StringBuffer和其用法几乎一摸一样)</span></span><br><span class="line">stringBuffer.append(String/StringBuilder str)		<span class="comment">//尾部添加字符串</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">Arrays.sort(Object[] array)	<span class="comment">//数组排序(默认为从小到大排序，且只能对一维数组排序) </span></span><br><span class="line">Arrays.toString(<span class="keyword">int</span>[] array)	<span class="comment">//数组转成字符串</span></span><br><span class="line">Arrays.equals(<span class="keyword">int</span>[] arrayA, <span class="keyword">int</span>[] arrayB)    <span class="comment">//比较两个数组是否相等</span></span><br><span class="line">array.length	<span class="comment">//一维数组的长度/二维数组的行数</span></span><br><span class="line">array[i].length	<span class="comment">//二维数组的列数</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">Integer.valueOf(String string)	<span class="comment">//string to integer，该方法也可传入多种类型参数</span></span><br><span class="line">Integer.toString(String string)	<span class="comment">//string to integer</span></span><br><span class="line">String.valueOf(Integer integer)	<span class="comment">//integer to string，该方法见上面，可传入多种类型值，此处只是用法之一</span></span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/07/leetcode%20%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%83%AD%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-List、LinkedList与接口问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -304,7 +530,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/">初识Android事件分发机制</a>
+      <a class="article-title" href="/2021/03/27/List%E3%80%81LinkedList%E4%B8%8E%E6%8E%A5%E5%8F%A3%E9%97%AE%E9%A2%98/">List、LinkedList与接口问题</a>
     </h1>
   
 
@@ -630,202 +856,6 @@
       
       
       
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/27/Java%E4%B8%AD%E6%96%B9%E6%B3%95%E4%BC%A0%E5%80%BC%E4%B8%8E%E4%BC%A0%E5%BC%95%E7%94%A8%E7%90%86%E8%A7%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JDBC连接Mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/24/JDBC%E8%BF%9E%E6%8E%A5Mysql/">JDBC连接Mysql</a>
-    </h1>
-  
-
-        
-        <a href="/2020/11/24/JDBC%E8%BF%9E%E6%8E%A5Mysql/" class="archive-article-date">
-  	<time datetime="2020-11-24T08:07:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一：JDBC连接"><a href="#一：JDBC连接" class="headerlink" title="一：JDBC连接"></a>一：JDBC连接</h3><p>在IJ中使用maven构建一个项目，在pom.xml中加入依赖：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.47<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/24/JDBC%E8%BF%9E%E6%8E%A5Mysql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java使用Okhttp库抓取GankIO数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/21/Java%E4%BD%BF%E7%94%A8Okhttp%E5%BA%93%E6%8A%93%E5%8F%96GankIO%E6%95%B0%E6%8D%AE/">Java使用Okhttp库抓取GankIO数据</a>
-    </h1>
-  
-
-        
-        <a href="/2020/11/21/Java%E4%BD%BF%E7%94%A8Okhttp%E5%BA%93%E6%8A%93%E5%8F%96GankIO%E6%95%B0%E6%8D%AE/" class="archive-article-date">
-  	<time datetime="2020-11-21T10:41:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一：使用okhttp3发送无参GET请求"><a href="#一：使用okhttp3发送无参GET请求" class="headerlink" title="一：使用okhttp3发送无参GET请求"></a>一：使用okhttp3发送无参GET请求</h3><p><strong>爬虫</strong>：模拟浏览器的url请求向服务器发送请求并获得返回。</p>
-<p><strong>在网上下载使用okhttp3所需要的jar包：</strong></p>
-<p>okio-2.7.0.jar；okhttp-4.8.0.jar；kotlin-stdlib-1.3.11.jar;    (版本可变)</p>
-<p>在IJ中创建一般项目后导入三个jar包(<a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/b0b63dbfe25df24a483070a1.html">导包教程</a>)</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/21/Java%E4%BD%BF%E7%94%A8Okhttp%E5%BA%93%E6%8A%93%E5%8F%96GankIO%E6%95%B0%E6%8D%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java中String类的值在创建后不能修改" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/22/Java%E4%B8%ADString%E7%B1%BB%E7%9A%84%E5%80%BC%E5%9C%A8%E5%88%9B%E5%BB%BA%E5%90%8E%E4%B8%8D%E8%83%BD%E4%BF%AE%E6%94%B9/">Java中String类的值在创建后不能修改</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/22/Java%E4%B8%ADString%E7%B1%BB%E7%9A%84%E5%80%BC%E5%9C%A8%E5%88%9B%E5%BB%BA%E5%90%8E%E4%B8%8D%E8%83%BD%E4%BF%AE%E6%94%B9/" class="archive-article-date">
-  	<time datetime="2020-10-22T09:56:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Java中String类的值在创建后不能修改"><a href="#Java中String类的值在创建后不能修改" class="headerlink" title="Java中String类的值在创建后不能修改"></a>Java中String类的值在创建后不能修改</h3><p>在Java中，String类型字符串的值在创建后就不能修改。这个修改是指String对象本身的内容没有改变，因为事实上String对象内容的改变是通过内存地址的改变来完成的。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -841,7 +871,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/22/Java%E4%B8%ADString%E7%B1%BB%E7%9A%84%E5%80%BC%E5%9C%A8%E5%88%9B%E5%BB%BA%E5%90%8E%E4%B8%8D%E8%83%BD%E4%BF%AE%E6%94%B9/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/11/27/Java%E4%B8%AD%E6%96%B9%E6%B3%95%E4%BC%A0%E5%80%BC%E4%B8%8E%E4%BC%A0%E5%BC%95%E7%94%A8%E7%90%86%E8%A7%A3/">展开全文 >></a>
         </p>
       
 
@@ -986,6 +1016,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">计算机网络——随记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
               </li>
             
             <div class="clearfix"></div>
