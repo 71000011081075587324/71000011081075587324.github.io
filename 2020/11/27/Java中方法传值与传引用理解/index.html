@@ -6,24 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Java中方法传值与传引用理解 | Hexo</title>
+  <title>Java中方法传值与传引用理解 | 一只编程的猪猪的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="该文为转载总结 Java中的方法总是传值的，当方法中传入的是对象时，实际上是传递了对象引用的副本，当在方法中对该对象引用的副本进行修改时，相当于也影响了方法外的实参，但在方法中如果让传入对象引用副本引用了一个新的对象，则之后的改变不会影响到方法外传入的实参。 当方法中传入的是基本数据类型的时候，相当于传递了一个基本数据类型的副本，改变的是该副本的内容，故不会对方法外传入的实参造成影响。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java中方法传值与传引用理解">
 <meta property="og:url" content="http://example.com/2020/11/27/Java%E4%B8%AD%E6%96%B9%E6%B3%95%E4%BC%A0%E5%80%BC%E4%B8%8E%E4%BC%A0%E5%BC%95%E7%94%A8%E7%90%86%E8%A7%A3/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="一只编程的猪猪的个人博客">
 <meta property="og:description" content="该文为转载总结 Java中的方法总是传值的，当方法中传入的是对象时，实际上是传递了对象引用的副本，当在方法中对该对象引用的副本进行修改时，相当于也影响了方法外的实参，但在方法中如果让传入对象引用副本引用了一个新的对象，则之后的改变不会影响到方法外传入的实参。 当方法中传入的是基本数据类型的时候，相当于传递了一个基本数据类型的副本，改变的是该副本的内容，故不会对方法外传入的实参造成影响。">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2020/11/27/Java%E4%B8%AD%E6%96%B9%E6%B3%95%E4%BC%A0%E5%80%BC%E4%B8%8E%E4%BC%A0%E5%BC%95%E7%94%A8%E7%90%86%E8%A7%A3/image-20201127131056216.png">
 <meta property="article:published_time" content="2020-11-27T02:29:40.000Z">
 <meta property="article:modified_time" content="2021-05-29T12:50:20.814Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="一只编程的猪猪">
 <meta property="article:tag" content="Java基础">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2020/11/27/Java%E4%B8%AD%E6%96%B9%E6%B3%95%E4%BC%A0%E5%80%BC%E4%B8%8E%E4%BC%A0%E5%BC%95%E7%94%A8%E7%90%86%E8%A7%A3/image-20201127131056216.png">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="一只编程的猪猪的个人博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon_1.png">
@@ -80,9 +80,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="/71000011081075587324" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="qq" target="_blank" href="/2744574167" title="qq"><i class="icon-qq"></i></a>
+					<a class="github" target="_blank" href="https://github.com/71000011081075587324" title="github"><i class="icon-github"></i></a>
 		        
 			</div>
 		</nav>
@@ -117,9 +115,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="/71000011081075587324" title="github"><i class="icon-github"></i></a>
-			        
-						<a class="qq" target="_blank" href="/2744574167" title="qq"><i class="icon-qq"></i></a>
+						<a class="github" target="_blank" href="https://github.com/71000011081075587324" title="github"><i class="icon-github"></i></a>
 			        
 				</div>
 			</nav>
@@ -332,7 +328,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 John Doe
+    		&copy; 2021 一只编程的猪猪
 		</div>
 		<span id="busuanzi_container_site_pv">
 			本站总访问量<span id="busuanzi_value_site_pv"></span>次
@@ -428,6 +424,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">hexo博客</a>
               </li>
              
@@ -486,6 +486,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">热爱编程&lt;br&gt;热爱美食的&lt;br&gt;一头猪猪</div>
   	  	
     	</section>
     
